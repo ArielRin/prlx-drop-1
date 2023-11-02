@@ -20,7 +20,7 @@ contract MaxxAirdrop is Ownable, ReentrancyGuard {
 		bytes32[] calldata merkleProof
 	) public nonReentrant {
 		// Verify that the address hasn't claimed before
-		require(!claimed[receiver], "MerkleAirdrop: PWR already claimed");
+		require(!claimed[receiver], "MerkleAirdrop: PRLX already claimed");
 
 		// Verify the proof and check if the user is eligible for the airdrop
 		bytes32 node = keccak256(abi.encodePacked(receiver, amount));
