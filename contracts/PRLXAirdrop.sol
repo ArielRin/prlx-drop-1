@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract MaxxAirdrop is Ownable, ReentrancyGuard {
+contract PrlxAirdrop is Ownable, ReentrancyGuard {
 	bytes32 public merkleRoot;
 	mapping(address => bool) public claimed;
 

@@ -3,13 +3,13 @@ import "@nomicfoundation/hardhat-toolbox";
 require('dotenv').config()
 
 const url = process.env.RPC || ""
-const chainId = Number(process.env.CHAIN_ID) || 1
+const chainId = Number(process.env.CHAIN_ID) || 10201
 const key = process.env.PRIV_KEY || ""
 
 const config: HardhatUserConfig = {
   solidity: "0.8.18",
   networks: {
-    maxxTestnet: {
+    MaxxChain: {
       url,
       chainId,
       accounts: [key]
@@ -17,11 +17,11 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      maxxTestnet: "123"
+      MaxxChain: "10201"
     },
     customChains: [
       {
-        network: "maxxTestnet",
+        network: "MaxxChain",
         chainId,
         urls: {
           apiURL: `${url}/api`,

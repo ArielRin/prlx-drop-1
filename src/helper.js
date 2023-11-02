@@ -1,7 +1,7 @@
 const Web3 = require('web3');
 const { addresses } = require("./input");
 const SHA256 = require('crypto-js/sha256');
-const airdropABI = require('../artifacts/contracts/MaxxAirdrop.sol/MaxxAirdrop.json').abi;
+const airdropABI = require('../artifacts/contracts/PrlxAirdrop.sol/PrlxAirdrop.json').abi;
 require('dotenv').config()
 
 const web3 = new Web3(process.env.RPC);

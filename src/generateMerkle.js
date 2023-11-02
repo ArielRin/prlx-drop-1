@@ -2,7 +2,7 @@ const { addresses } = require("./input");
 const { MerkleTree } = require('merkletreejs');
 const SHA256 = require('crypto-js/sha256');
 
-// Replace this with your list of address and balances
+// See input.js for list of address and balances
 const elements = [...addresses];
 
 // Sort the elements by address
