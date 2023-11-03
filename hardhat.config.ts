@@ -9,7 +9,7 @@ const key = process.env.PRIV_KEY || ""
 const config: HardhatUserConfig = {
   solidity: "0.8.18",
   networks: {
-    maxxTestnet: {
+    maxxChain: {
       url,
       chainId,
       accounts: [key]
@@ -17,11 +17,11 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      maxxTestnet: "123"
+      maxxChain: "10201"
     },
     customChains: [
       {
-        network: "maxxTestnet",
+        network: "maxxChain",
         chainId,
         urls: {
           apiURL: `${url}/api`,

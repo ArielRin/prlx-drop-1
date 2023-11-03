@@ -4,7 +4,7 @@
     "generate": "node src/generateMerkle.js",
     "start": " node src/server.js",
     "compile": "npx hardhat compile",
-    "deploy": "npx hardhat run scripts/deploy.ts --network maxxTestnet"
+    "deploy": "npx hardhat run scripts/deploy.ts --network maxxChain"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
