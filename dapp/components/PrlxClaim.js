@@ -17,7 +17,7 @@ const PrlxClaim = () => {
   }, []);
 
   // Function to handle the "Enter" button click
-  const handleEnterLottery = async () => {
+  const handleMakeClaim = async () => {
     if (web3) {
       const contractAddress = '0xd7EA92A63371cC9324E9Fde3F69c7aDfBd77BAEc'; // Replace with your contract address
       const contractABI = [];
@@ -30,7 +30,7 @@ const PrlxClaim = () => {
           from: accounts[0],
           value: web3.utils.toWei('100', 'ether'), // Sending 100 PWR, adjust as needed
         });
-        console.log('Entered the lottery successfully');
+        console.log('Tokens Claimed successfully');
       } catch (error) {
         console.error('Error entering the lottery', error);
       }
@@ -56,10 +56,11 @@ const PrlxClaim = () => {
       </div>
       <div className={style.paragragh}>
       </div>
-      <div className={style.btn} onClick={handleEnterLottery}>
+      <div className={style.btn} onClick={handleMakeClaim}>
         Claim PRLX
       </div>
     </div>
+
   );
 };
 

@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
   }, );
 
-  const enterLottery = async () => {
+  const claimPrlx = async () => {
     try {
       console.log('entering lottery');
       await claimContract.methods.enter().send({
@@ -62,7 +62,7 @@ export const AppProvider = ({ children }) => {
       value={{
         address,
         connectWallet,
-        enterLottery,
+        claimPrlx,
         etherscanUrl,
         isOwner,
       }}

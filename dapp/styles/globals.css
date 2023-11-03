@@ -8,7 +8,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-size: cover; /* You can adjust this to your needs */
-  background-image: url("/prlx.gif");
+  background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWs0bzVxMXUyaWV6cHdoa3E4a3B1bGs4OXE2a2Q5NHZwNmZtMGZ4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41lQsh0iOvne52yA/giphy.gif");
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
