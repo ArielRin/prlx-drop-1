@@ -4,14 +4,14 @@ require('dotenv').config()
 
 async function main() {
   const merkleRoot = process.env.MERKLE_ROOT || ""
-  const MaxxAirdrop = await ethers.getContractFactory("MaxxAirdrop");
-  const maxxAirdrop = await MaxxAirdrop.deploy(merkleRoot);
+  const PrlxAirdrop = await ethers.getContractFactory("PrlxAirdrop");
+  const prlxAirdrop = await PrlxAirdrop.deploy(merkleRoot);
 
-  await maxxAirdrop.deployed();
-  console.log(`MaxxAirdrop deployed to ${maxxAirdrop.address}`);
+  await prlxAirdrop.deployed();
+  console.log(`PrlxAirdrop deployed to ${prlxAirdrop.address}`);
 
   await run("verify:verify", {
-    address: maxxAirdrop.address,
+    address: prlxAirdrop.address,
     constructorArguments: [merkleRoot],
   });
 }

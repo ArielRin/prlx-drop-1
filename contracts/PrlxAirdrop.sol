@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract MaxxAirdrop is Ownable, ReentrancyGuard {
+contract PrlxAirdrop is Ownable, ReentrancyGuard {
 	bytes32 public merkleRoot;
 	mapping(address => bool) public claimed;
 
@@ -20,29 +20,29 @@ contract MaxxAirdrop is Ownable, ReentrancyGuard {
 		bytes32[] calldata merkleProof
 	) public nonReentrant {
 		// Verify that the address hasn't claimed before
-		require(!claimed[receiver], "MerkleAirdrop: PWR already claimed");
+		require(!claimed[receiver], "PrlxAirdrop: PRLX already claimed");
 
 		// Verify the proof and check if the user is eligible for the airdrop
 		bytes32 node = keccak256(abi.encodePacked(receiver, amount));
 		require(
 			MerkleProof.verify(merkleProof, merkleRoot, node),
-			"MerkleAirdrop: Invalid proof"
+			"PrlxAirdrop: Invalid proof"
 		);
 
 		// Mark the tokens as claimed
 		claimed[receiver] = true;
 
 		// Transfer eth
-		sendPWR(receiver, amount);
+		sendPRLX(receiver, amount);
 	}
 
-	function sendPWR(address payable _to, uint256 _amount) private {
+	function sendPRLX(address payable _to, uint256 _amount) private {
 		(bool sent, ) = _to.call{value: _amount}("");
-		require(sent, "MerkleAirdrop: Transfer failed");
+		require(sent, "PrlxAirdrop: Transfer failed");
 	}
 
 	function retrieve(uint256 _amount) public onlyOwner {
 		(bool sent, ) = payable(owner()).call{value: _amount}("");
-		require(sent, "MerkleAirdrop: Transfer failed");
+		require(sent, "PrlxAirdrop: Transfer failed");
 	}
 }
